@@ -1,25 +1,32 @@
+PRODUCT_VERSION = 0.0.1
+ifneq ($(RR_BUILDTYPE),)
+EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(RR_BUILD)-$(RR_BUILDTYPE)
+else
+EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(RR_BUILD)-Unofficial
+EMERALDUX_BUILDTYPE=Unofficial
+
+endif
 # Build fingerprint
 ifneq ($(BUILD_FINGERPRINT),)
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-# LineageOS System Version
+# EmeraldUX System Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.version=$(LINEAGE_VERSION) \
-    ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
-    ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
-    ro.modversion=$(LINEAGE_VERSION) \
-    ro.lineagelegal.url=https://lineageos.org/legal
+    ro.emeraldux.version=$(EMERALDUX_VERSION) \
+    ro.emeraldux.releasetype=$(EMERALDUX_BUILDTYPE) \
+    ro.emeraldux.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.modversion=$(EMERALDUX_VERSION) \
 
-# LineageOS Platform Display Version
+# EmeraldUX Platform Display Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.display.version=$(LINEAGE_DISPLAY_VERSION)
+    ro.emeraldux.display.version=$(EMERALDUX_DISPLAY_VERSION)
 
-# LineageOS Platform SDK Version
+# EmeraldUX Platform SDK Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.build.version.plat.sdk=$(LINEAGE_PLATFORM_SDK_VERSION)
+    ro.emeraldux.build.version.plat.sdk=$(LINEAGE_PLATFORM_SDK_VERSION)
 
-# LineageOS Platform Internal Version
+# EmeraldUX Platform Internal Version
 ADDITIONAL_BUILD_PROPERTIES += \
-    ro.lineage.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
+    ro.emeraldux.build.version.plat.rev=$(LINEAGE_PLATFORM_REV)
