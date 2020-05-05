@@ -1,8 +1,8 @@
 PRODUCT_VERSION = 0.0.1
-ifneq ($(RR_BUILDTYPE),)
-EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(RR_BUILD)-$(RR_BUILDTYPE)
+ifneq ($(EMERALDUX_BUILDTYPE),)
+EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(EMERALDUX_BUILD)-$(EMERALDUX_BUILDTYPE)
 else
-EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(RR_BUILD)-Unofficial
+EMERALDUX_VERSION := EmeraldUX-10-v$(PRODUCT_VERSION)-$(shell date +%Y%m%d)-$(EMERALDUX_BUILD)-Unofficial
 EMERALDUX_BUILDTYPE=Unofficial
 
 endif
