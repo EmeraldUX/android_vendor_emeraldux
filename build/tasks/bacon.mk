@@ -23,4 +23,4 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(EMERALDUX_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(EMERALDUX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(EMERALDUX_TARGET_PACKAGE).md5sum
 	@echo "NEW OTA, shines like emerald: $(EMERALDUX_TARGET_PACKAGE)" >&2
-        $(hide) ./vendor/emeraldux/tools/emeraldux.sh
+	$(hide) ./vendor/emeraldux/tools/emeraldux.sh
